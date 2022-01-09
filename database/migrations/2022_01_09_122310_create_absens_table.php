@@ -15,7 +15,7 @@ class CreateAbsensTable extends Migration
     {
         Schema::create('absens', function (Blueprint $table) {
             $table->uuid("absen_id")->primary();
-            $table->uuid("user_id");
+            $table->uuid("user_id")->index();
             $table->datetime("start_date");
             $table->datetime("end_date");
             $table->integer("total_hour");

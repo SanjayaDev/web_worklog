@@ -33,17 +33,19 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                        @can('su-access')
-                        <li class="nav-item">
-                            <a class="nav-link" href="/users">User</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/projects">Project</a>
-                        </li>
-                        @endcan
-                        <li class="nav-item">
-                            <a class="nav-link" href="/assignment">Assignment</a>
-                        </li>
+                        @auth
+                            @can('su-access')
+                            <li class="nav-item">
+                                <a class="nav-link" href="/users">User</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/projects">Project</a>
+                            </li>
+                            @endcan
+                            <li class="nav-item">
+                                <a class="nav-link" href="/assignment">Assignment</a>
+                            </li>
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->

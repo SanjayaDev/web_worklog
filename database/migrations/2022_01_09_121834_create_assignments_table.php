@@ -15,8 +15,8 @@ class CreateAssignmentsTable extends Migration
     {
         Schema::create('assignments', function (Blueprint $table) {
             $table->uuid("assign_id")->primary();
-            $table->uuid("user_id");
-            $table->uuid("project_id");
+            $table->uuid("user_id")->index();
+            $table->uuid("project_id")->index();
             $table->integer("assign_status_id")->index();
             $table->string("assignment_title", 200);
             $table->text("description")->nullable();
@@ -28,8 +28,8 @@ class CreateAssignmentsTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign("user_id")->references("user_id")->on("users")->onUpdate("CASCADE")->onUpdate("RESTRICT");
-            $table->foreign("project_id")->references("project_id")->on("projects")->onUpdate("CASCADE")->onUpdate("RESTRICT");
+            // $table->foreign("user_id")->references("user_id")->on("users")->onUpdate("CASCADE")->onUpdate("RESTRICT");
+            // $table->foreign("project_id")->references("project_id")->on("projects")->onUpdate("CASCADE")->onUpdate("RESTRICT");
             // $table->foreign("assign_status_id")->references("assign_status_id")->on("assignment_status")->onUpdate("CASCADE")->onUpdate("RESTRICT");
         });
     }

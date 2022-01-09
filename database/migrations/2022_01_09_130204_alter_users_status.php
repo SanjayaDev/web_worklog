@@ -14,8 +14,8 @@ class AlterUsersStatus extends Migration
     public function up()
     {
         Schema::table("users", function(Blueprint $table) {
-            $table->uuid("user_status_id");
-            $table->foreign("user_status_id")->references("user_status_id")->on("user_status")->onUpdate("CASCADE")->onDelete("RESTRICT");
+            $table->uuid("user_status_id")->index();
+            // $table->foreign("user_status_id")->references("user_status_id")->on("user_status")->onUpdate("CASCADE")->onDelete("RESTRICT");
         });
     }
 

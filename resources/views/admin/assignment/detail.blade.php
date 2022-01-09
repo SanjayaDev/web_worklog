@@ -22,15 +22,15 @@
         </tr>
         <tr>
           <td>Deskripsi</td>
-          <td>: {{ $assignment->description }}</td>
+          <td>: {!! nl2br($assignment->description) !!}</td>
         </tr>
         <tr>
           <td>Tanggal Muncul</td>
-          <td>: {{ date("Y-m-d", strtotime($assignment->show_date)) }}</td>
+          <td>: {{ date("d M Y", strtotime($assignment->show_date)) }}</td>
         </tr>
         <tr>
           <td>Tanggal Deadline</td>
-          <td>: {{ date("Y-m-d", strtotime($assignment->deadline_date)) }}</td>
+          <td>: {{ date("d M Y", strtotime($assignment->deadline_date)) }}</td>
         </tr>
       </table>
 
