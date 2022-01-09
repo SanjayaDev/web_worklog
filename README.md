@@ -1,2 +1,2 @@
 # web_worklog
-Web Worklog 
+Simple web worklog + absensi
