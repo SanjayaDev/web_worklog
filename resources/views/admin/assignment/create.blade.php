@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+{{-- @php
+  dump($errors);
+@endphp --}}
   <div class="card">
     <div class="card-body">
       <form action="/assignment" method="POST">
@@ -40,12 +43,23 @@
             @enderror
           </div>
         @endcan
-        <x-input-text label="Judul" name="assignment_title" required="required"></x-input-text>
+        <x-input-text label="Judul" name="assignment_title" value="{{ old('assignment_title') }}" required="required"></x-input-text>
 
         <div class="form-group">
           <label>Description</label>
-          <textarea name="description" class="form-control" cols="30" rows="5"></textarea>
+          <textarea name="description" class="form-control" cols="30" rows="5">{{ old("description") }}</textarea>
           @error('description')
+            <small class="text-danger">{{ $message }}</small>
+          @enderror
+        </div>
+        <div class="form-group">
+          <label>Skala Prioritas</label>
+          <select name="priority" class="form-control">
+            <option @if(old("priority") == "High") selected @endif value="High">High</option>
+            <option @if(old("priority") == "Medium") selected @endif value="Medium">Medium</option>
+            <option @if(old("priority") == "Low") selected @endif value="Low">Low</option>
+          </select>
+          @error('priority')
             <small class="text-danger">{{ $message }}</small>
           @enderror
         </div>

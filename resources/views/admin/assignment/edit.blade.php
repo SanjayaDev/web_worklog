@@ -51,6 +51,17 @@
           @enderror
         </div>
         <div class="form-group">
+          <label>Skala Prioritas</label>
+          <select name="priority" class="form-control">
+            <option @if($assignment->priority == "High") selected @endif value="High">High</option>
+            <option @if($assignment->priority == "Medium") selected @endif value="Medium">Medium</option>
+            <option @if($assignment->priority == "Low") selected @endif value="Low">Low</option>
+          </select>
+          @error('priority')
+            <small class="text-danger">{{ $message }}</small>
+          @enderror
+        </div>
+        <div class="form-group">
           <label>Tanggal Ditampilkan</label>
           <input type="date" class="form-control" name="show_date" value="{{ date("Y-m-d", strtotime($assignment->show_date)) }}" required>
           @error('show_date')

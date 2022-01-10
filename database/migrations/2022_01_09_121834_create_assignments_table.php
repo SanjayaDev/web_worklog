@@ -25,6 +25,7 @@ class CreateAssignmentsTable extends Migration
             $table->date("deadline_date");
             $table->date("finish_date")->nullable();
             $table->uuid("user_created")->index();
+            $table->enum("priority", ["High", "Medium", "Low"]);
             $table->timestamps();
             $table->softDeletes();
 

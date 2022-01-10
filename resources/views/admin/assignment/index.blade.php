@@ -11,6 +11,7 @@
             <th>No</th>
             <th>Nama Project</th>
             <th>Title</th>
+            <th>Prioritas</th>
             <th>Detail</th>
           </tr>
         </thead>
@@ -20,6 +21,7 @@
               <td>{{ $loop->iteration }}</td>
               <td>{{ $item->project->project_name }}</td>
               <td>{{ $item->assignment_title }}</td>
+              <td>{{ $item->priority }}</td>
               <td>
                 <a class="btn btn-info btn-sm" href="{{ "/assignment/$item->assign_id" }}">Detail</a>
               </td>

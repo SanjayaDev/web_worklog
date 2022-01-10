@@ -21,6 +21,10 @@
           <td>: {{ $assignment->assignment_title }}</td>
         </tr>
         <tr>
+          <td>Skala Prioritas</td>
+          <td>: {{ $assignment->priority }}</td>
+        </tr>
+        <tr>
           <td>Deskripsi</td>
           <td>: {!! nl2br($assignment->description) !!}</td>
         </tr>

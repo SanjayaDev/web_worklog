@@ -29,7 +29,7 @@ class AssignmentController extends Controller
             $data["users"] = User::all();
             $data["assignment_status"] = AssignmentStatus::all();
         } else {
-            $data["users"] = User::where("user_id", $auth->user_id);
+            $data["users"] = User::where("user_id", $auth->user_id)->get();
         }
         $data["projects"] = Project::all();
 
@@ -41,14 +41,20 @@ class AssignmentController extends Controller
         $this->validate($request, [
             "user_id" => "required|uuid|exists:users,user_id",
             "project_id" => "required|uuid|exists:projects,project_id",
-            "assign_status_id" => "required|numeric|exists:assignment_status,assign_status_id",
+            "assign_status_id" => "sometimes|numeric|exists:assignment_status,assign_status_id",
             "assignment_title" => "required|string",
             "description" => "required|string",
             "show_date" => "required|dateformat:Y-m-d",
             "deadline_date" => "required|dateformat:Y-m-d",
         ]);
 
-        $request->request->add(["user_created" => Auth::user()->user_id]);
+        $auth = Auth::user();
+        $request->request->add(["user_created" => $auth->user_id]);
+        if ($auth->id != 1) {
+            $request->request->add(["assign_status_id" => 1]);
+        }
+        
+        // dd($request);
 
         $assign = Assignment::create($request->all());
         return redirect("/assignment/$assign->assign_id")->with("message", "<script>alert('Sukses membuat assignment!')</script>");
@@ -72,7 +78,7 @@ class AssignmentController extends Controller
             $data["users"] = User::all();
             $data["assignment_status"] = AssignmentStatus::all();
         } else {
-            $data["users"] = User::where("user_id", $auth->user_id);
+            $data["users"] = User::where("user_id", $auth->user_id)->get();
         }
         $data["projects"] = Project::all();
         $data["assignment"] = $assignment;
@@ -85,7 +91,7 @@ class AssignmentController extends Controller
         $this->validate($request, [
             "user_id" => "required|uuid|exists:users,user_id",
             "project_id" => "required|uuid|exists:projects,project_id",
-            "assign_status_id" => "required|numeric|exists:assignment_status,assign_status_id",
+            "assign_status_id" => "sometimes|numeric|exists:assignment_status,assign_status_id",
             "assignment_title" => "required|string",
             "description" => "required|string",
             "show_date" => "required|dateformat:Y-m-d",
