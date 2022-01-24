@@ -14,7 +14,7 @@ class AssignmentController extends Controller
     public function index()
     {
         $data = [
-            "assignments" => Assignment::where("user_id", Auth::user()->user_id)->where("show_date", "<=", date("Y-m-d"))->where("assign_status_id", 1)->paginate(20),
+            "assignments" => Assignment::with("project")->where("user_id", Auth::user()->user_id)->where("show_date", "<=", date("Y-m-d"))->where("assign_status_id", 1)->paginate(20),
         ];
 
         return view("admin.assignment.index", $data);

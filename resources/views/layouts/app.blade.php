@@ -18,6 +18,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    @livewireStyles
+
+    @livewireScripts
+    <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false"></script>
 </head>
 <body>
     <div id="app">
@@ -91,6 +96,9 @@
             @yield('content')
         </main>
     </div>
+
+    
+    <script src="{{ asset('js/app.js') }}"></script>
 
     @if (session("message"))
     {!! session("message") !!}

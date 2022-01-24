@@ -27,7 +27,7 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define("su-access", function($user) {
             return $user->id == 1;
-        });
+        }); 
 
         Gate::define("update-assign", function($user, $assignment) {
             return $assignment->assign_status_id == 1 && ($user->id == 1 || $assignment->user_created == $user->user_id);
