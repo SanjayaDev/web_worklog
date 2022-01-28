@@ -1,9 +1,15 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\{
-    UserController,
-    AssignmentController
+// use App\Http\Controllers\{
+//     UserController,
+//     AssignmentController
+// };
+
+use App\Http\Livewire\{
+    Assignment\Index as AssignmentIndex,
+    Assignment\Create as AssignmentCreate
 };
 
 /*
@@ -28,6 +34,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(["middleware" => "auth"], function () {
     Route::resource("/users", UserController::class);
     
-    Route::resource("/assignment", AssignmentController::class);
-    Route::get("/assignment/{assign_id}/finish", [AssignmentController::class, "finished"]);
+    // Route::resource("/assignment", AssignmentComponent::class);
+    Route::group(["prefix" => "/assignment"], function () {
+        Route::get("/", AssignmentIndex::class);
+        Route::get("/create", AssignmentCreate::class);
+    });
+    Route::get("/assignment/{assign_id}/finish", [AssignmentComponent::class, "finished"]);
 });

@@ -23,6 +23,9 @@
 
     @livewireScripts
     <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+
 </head>
 <body>
     <div id="app">
@@ -94,11 +97,11 @@
 
         <main class="py-4 container-fluid">
             @yield('content')
+            @isset($slot)
+             {!! $slot !!}
+            @endisset
         </main>
     </div>
-
-    
-    <script src="{{ asset('js/app.js') }}"></script>
 
     @if (session("message"))
     {!! session("message") !!}
