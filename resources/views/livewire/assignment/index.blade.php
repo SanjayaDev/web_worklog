@@ -10,7 +10,7 @@
                 <div class="alert bg-danger">{{ session("error_message") }}</div>
             @endif
 
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-md-2 mb-3">
                     <small>Show</small>
                     <select wire:model="show_count" name="show_count" class="form-control">
@@ -21,8 +21,9 @@
                         @endfor
                     </select>
                 </div>
-            </div>
-            <table class="table table-striped table-bordered table-hover">
+            </div> --}}
+            <livewire:assignment.assignment-datatable />
+            {{-- <table class="table table-striped table-bordered table-hover">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -40,7 +41,7 @@
                         <td>{{ $item->assignment_title }}</td>
                         <td>{{ $item->priority }}</td>
                         <td>
-                        <a class="btn btn-info btn-sm" href="{{ "/assignment/$item->assign_id" }}">Detail</a>
+                            <a class="btn btn-info btn-sm" href="{{ "/assignment/$item->assign_id" }}">Detail</a>
                         </td>
                     </tr>
                     @empty
@@ -51,9 +52,9 @@
                     </tr>
                     @endforelse
                 </tbody>
-            </table>
+            </table> --}}
 
-            {{ $assignments->links() }}
+            {{-- {{ $assignments->links() }} --}}
         </div>
     </div>
 </div>

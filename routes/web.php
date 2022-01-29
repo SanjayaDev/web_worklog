@@ -9,8 +9,11 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Livewire\{
     Assignment\Index as AssignmentIndex,
-    Assignment\Create as AssignmentCreate
+    Assignment\Create as AssignmentCreate,
+    Assignment\Detail as AssignmentDetail
 };
+
+// use \App\Http\Livewire\Test;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +41,9 @@ Route::group(["middleware" => "auth"], function () {
     Route::group(["prefix" => "/assignment"], function () {
         Route::get("/", AssignmentIndex::class);
         Route::get("/create", AssignmentCreate::class);
+        Route::get("/{assign_id}", AssignmentDetail::class);
     });
     Route::get("/assignment/{assign_id}/finish", [AssignmentComponent::class, "finished"]);
+
+    // Route::get("/testing-component", Test::class);
 });

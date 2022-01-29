@@ -20,10 +20,11 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     @livewireStyles
+    @powerGridStyles
 
     @livewireScripts
     <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false"></script>
-    <script src="//unpkg.com/alpinejs" defer></script>
+    {{-- <script src="//unpkg.com/alpinejs" defer></script> --}}
     <script src="{{ asset('js/app.js') }}"></script>
 
 </head>
@@ -103,6 +104,7 @@
         </main>
     </div>
 
+    @powerGridScripts
     @if (session("message"))
     {!! session("message") !!}
     @endif
