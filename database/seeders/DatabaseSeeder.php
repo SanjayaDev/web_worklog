@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
             \Database\Seeders\AssignmentStatusSeed::class,
             \Database\Seeders\UserStatusSeed::class,
             \Database\Seeders\ProjectsSeed::class,
+            \Database\Seeders\UserLevelsSeed::class,
+            \Database\Seeders\UsersSeed::class,
         ]);
         // \App\Models\User::factory(10)->create();
     }
