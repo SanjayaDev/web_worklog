@@ -1,0 +1,147 @@
+.login-register-page .btn:focus,
+.login-register-page .btn:active {
+	outline: none !important;
+}
+
+.login-register-page {
+	.width-left {
+		width: 0%;
+	}
+	.width-right {
+		width: 100%;
+		height: 100%;
+		padding: 8rem 2rem;
+		background-color: #fcfdff;
+	}
+	.centered {
+		left: 50%;
+		top: 50%;
+		width: 80%;
+		transform: translate(-50%, -50%);
+	}
+	.right {
+		width: 100%;
+	}
+	.title-text {
+		font: 600 1.875rem/2.25rem Poppins, sans-serif;
+		margin-bottom: 0.75rem;
+	}
+	.caption-text {
+		font: 400 0.875rem/1.75rem Poppins, sans-serif;
+		color: #a8adb7;
+	}
+	.input-label {
+		font: 500 1.125rem/1.75rem Poppins, sans-serif;
+		color: #39465b;
+	}
+	.div-input {
+		font: 300 1rem/1.5rem Poppins, sans-serif;
+		padding: 1rem 1.25rem;
+		margin-top: 0.75rem;
+		border-radius: 0.75rem;
+		border: 1px solid #cacbce;
+		color: #2a3240;
+		transition: 0.3s;
+	}
+	.div-input:focus-within {
+		border: 1px solid #2ec49c;
+		color: #2a3240;
+		transition: 0.3s;
+	}
+	.div-input input::placeholder {
+		color: #cacbce;
+		transition: 0.3s;
+	}
+	.div-input:focus-within input::placeholder {
+		color: #2a3240;
+		outline: none;
+		transition: 0.3s;
+	}
+	.div-input .icon-toggle-empty-3-5 path,
+	.div-input:focus-within .icon path {
+		transition: 0.3;
+		fill: #2ec49c;
+		transition: 0.3s;
+	}
+	.input-field {
+		font: 300 1rem/1.5rem Poppins, sans-serif;
+		width: 100%;
+		background-color: #fcfdff;
+		transition: 0.3s;
+	}
+	.input-field:focus {
+		outline: none;
+		transition: 0.3s;
+	}
+	.forgot-password {
+		font: 400 0.875rem/1.25rem Poppins, sans-serif;
+		color: #cacbce;
+		transition: 0.3s;
+		text-decoration: none;
+	}
+	.forgot-password:hover {
+		color: #2a3240;
+	}
+	.btn-fill {
+		font: 500 1.25rem/1.75rem Poppins, sans-serif;
+		background-image: linear-gradient(rgba(91, 203, 173, 1), rgba(39, 194, 153, 1));
+		padding: 0.75rem 1rem;
+		margin-top: 2.25rem;
+		border-radius: 0.75rem;
+		transition: 0.5s;
+	}
+	.login-register-page .btn-fill:hover {
+		background-image: linear-gradient(#2ec49c, #2ec49c);
+		transition: 0.5s;
+	}
+	.bottom-caption {
+		font: 400 0.875rem/1.25rem Poppins, sans-serif;
+		margin-top: 2rem;
+		color: #2a3240;
+	}
+	.green-bottom-caption {
+		color: #2ec49c;
+		font-weight: 500;
+	}
+	.green-bottom-caption:hover {
+		color: #2ec49c;
+		cursor: pointer;
+		text-decoration: underline;
+	}
+}
+
+@media (min-width: 576px) {
+	.login-register-page .width-right {
+		padding: 8rem 4rem;
+	}
+
+	.login-register-page .right {
+		width: 58.333333%;
+	}
+}
+
+@media (min-width: 768px) {
+	.login-register-page .right {
+		width: 66.666667%;
+	}
+}
+
+@media (min-width: 992px) {
+	.login-register-page .width-left {
+		width: 48%;
+	}
+
+	.login-register-page .width-right {
+		width: 52%;
+	}
+
+	.login-register-page .right {
+		width: 75%;
+	}
+}
+
+@media (min-width: 1200px) {
+	.login-register-page .right {
+		width: 58.333333%;
+	}
+}

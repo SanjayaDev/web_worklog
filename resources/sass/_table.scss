@@ -1,0 +1,28 @@
+:root {
+	// theme light
+	--bgr-white: white;
+	--text-default: black;
+	--bgr-light: #f4f5f8;
+	--bgr-primary: #1c84ee;
+	--bgr-primary-hover: #0d6efd;
+	--bgr-secondary: #495057;
+	--bgr-linear-gradient-light: linear-gradient(118deg, #1c84ee, rgb(28 132 238));
+	--bgr-shadow-light: 0 4px 20px 0 #00000024, 0 7px 10px -5px #1c84ee;
+}
+[data-theme="dark"] {
+	--text-default: white;
+
+	--bgr-white: #283046;
+	--bgr-light: #181d31;
+	--bgr-primary: #2070b7;
+	--bgr-primary-hover: #0d6efd;
+	--bgr-secondary: #81919c;
+	--bgr-color-white: white;
+	--bgr-linear-gradient-dark: linear-gradient(118deg, #7367f0, rgba(115, 103, 240, .7));
+	--bgr-shadow-dark: 0 0 10px 1px #7367f0b3;
+
+	// theme dark
+	--bgr-dark-reguler: #202940;
+	--bgr-dark-bold: #202940;
+	--bgr-grey: #81919c;
+}

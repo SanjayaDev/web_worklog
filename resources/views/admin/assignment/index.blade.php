@@ -28,7 +28,7 @@
             </tr>
           @empty
             <tr>
-              <td colspan="4">
+              <td colspan="5">
                 <p class="text-center">Tidak ada tugas</p>
               </td>
             </tr>
