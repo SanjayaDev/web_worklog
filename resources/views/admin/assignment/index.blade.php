@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin.app')
 
 @section('content')
   <div class="card">
@@ -28,8 +28,8 @@
             </tr>
           @empty
             <tr>
-              <td colspan="5">
-                <p class="text-center">Tidak ada tugas</p>
+              <td colspan="6">
+                <p class="text-center text-white">Tidak ada tugas</p>
               </td>
             </tr>
           @endforelse

@@ -1,20 +1,16 @@
 @extends('layouts.admin.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <a href="/assignment" class="text-dark text-decoration-none">
-                <div class="card">
-                    <div class="card-header">
-                        <h6>Jumlah Assignment</h6>
-                    </div>
-                    <div class="card-body text-center">
-                        <h4>{{ $total_assignment }}</h4>
-                    </div>
+<div class="row">
+    <div class="col-md-3 card-report">
+        <a href="/assignment">
+            <div class="card">
+                <h5 class="card-title">Assignment</h5>
+                <div class="icon-center-report">
+                    <h4>{{ $total_assignment }}</h4>
                 </div>
-            </a>
-        </div>
+            </div>
+        </a>
     </div>
 </div>
 @endsection

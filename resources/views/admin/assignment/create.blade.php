@@ -1,9 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.admin.app')
 
 @section('content')
-{{-- @php
-  dump($errors);
-@endphp --}}
   <div class="card">
     <div class="card-body">
       <form action="/assignment" method="POST">

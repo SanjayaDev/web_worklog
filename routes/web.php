@@ -5,6 +5,7 @@ use App\Http\Controllers\{
     UserController,
     AssignmentController
 };
+use Illuminate\Support\Facades\Redirect;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,8 @@ use App\Http\Controllers\{
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return Redirect::to("https://bargros.id");
 });
 
 Auth::routes();

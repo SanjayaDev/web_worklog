@@ -1,8 +1,14 @@
 @import "app.scss";
 
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
 @import "_error-page_blank",
 	"_login",
 	"_table",
+	"_component_input",
 	"_component-dark";
 
 :root {
@@ -89,7 +95,7 @@ body {
 	padding: 12px 12px;
 	border-radius: 4px;
 	margin-bottom: 20px;
-	overflow-x: scroll;
+	overflow-x: auto;
 	width: 100%;
 	h5 {
 		white-space: nowrap;
